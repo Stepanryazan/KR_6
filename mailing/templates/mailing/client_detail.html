@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Просмотр клиента</h1>
+        <p class="lead text-muted">На этой странице отображена информация клиента "{{ object }}"</p>
+    </div>
+</section>
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Информация клиента
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Имя</td>
+                            <td> {{object.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Фамилия</td>
+                            <td> {{object.surname}}</td>
+                        </tr>
+                        <tr>
+                            <td>Отчество</td>
+                            <td> {{object.patronymic}}</td>
+                        </tr>
+                        <tr>
+                            <td>Почта</td>
+                            <td> {{object.email}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Комментарий
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p>{{object.comment}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

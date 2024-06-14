@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container">
+    <br>
+    <div class="row">
+        <section class="col-8">
+            <h2>Рассылки</h2>
+            <p class="lead">Добро пожаловать на наш сервис рассылок. Здесь вы можете добавлять клиентов и
+                создавать сообщения для рассылок. После чего, легким движением руки вы можете создать саму рассылку,
+                указать
+                время, в которое желаете ее отправить и периодичность отпраки. И все! Благодаря нашему сервису, рассылка
+                будет сама отправляться нужным клиентам в нужное время!</p>
+        </section>
+        <section class="col-4">
+            <h5>Статистика рассылок</h5>
+            <table class="table table-sm">
+                <tr>
+                    <td>Всего рассылок</td>
+                    <td>{{all_mailings}}</td>
+                </tr>
+                <tr>
+                    <td>Активных рассылок</td>
+                    <td>{{active_mailings}}</td>
+                </tr>
+                <tr>
+                    <td>Уникальных клиентов для рассылок</td>
+                    <td>{{active_clients}}</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</div>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for object in random_blogs %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top"
+                         src="/media/{{object.image}}/"
+                         alt="Card image cap"
+                         style="width: 100%; height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <p class="card-text">{{ object.title }}</p>
+                        <p class="card-text">{{ object.content|slice:":100" }}...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'blog:view_blog' object.pk %}"
+                                   class="btn btn-sm btn-outline-success">Читать</a>
+                            </div>
+                            <small class="text-muted">Просмотры: {{ object.views_count }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

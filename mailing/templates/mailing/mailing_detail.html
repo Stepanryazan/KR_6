@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Рассылка "{{ object.message }}"</h1>
+        <p class="lead text-muted">На этой странице отображена информация о рассылке "{{ object.message }}"!</p>
+    </div>
+</section>
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Информация рассылки
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Тема</td>
+                            <td>{{ object.message }}</td>
+                        </tr>
+                        <tr>
+                            <td>Дата первой отправки</td>
+                            <td>{{ object.start_time }}</td>
+                        </tr>
+                        <tr>
+                            <td>Периодичность</td>
+                            <td>{{ object.get_regularity_display }}</td>
+                        </tr>
+                        <tr>
+                            <td>Статус</td>
+                            <td>{{ object.get_status_display }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Клиенты
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        {% for client in object.client.all %}
+                        <li>{{ client }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

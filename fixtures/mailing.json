@@ -1,0 +1,84 @@
+[
+  {
+    "model": "mailing.client",
+    "pk": 3,
+    "fields": {
+      "email": "schmelyov.jegor@yandex.ru",
+      "name": "Егор",
+      "surname": "Шмелев",
+      "patronymic": "Олегович",
+      "comment": "wsedf",
+      "owner": 5
+    }
+  },
+  {
+    "model": "mailing.message",
+    "pk": 2,
+    "fields": {
+      "subject": "Новый год!",
+      "message": "Дорогой подписчик, поздравляем тебя с Новым Годом!",
+      "image": "mailing_images/HappyNewYear_GF1jEmq.jpg",
+      "owner": 5
+    }
+  },
+  {
+    "model": "mailing.message",
+    "pk": 3,
+    "fields": {
+      "subject": "День рождения",
+      "message": "Дорогой подписчик, поздравляем тебя с Днём рождения!",
+      "image": "mailing_images/3887ccd213e45879d82d2a6c893bcf6a_0SUoAS3.jpg",
+      "owner": 5
+    }
+  },
+  {
+    "model": "mailing.mailing",
+    "pk": 5,
+    "fields": {
+      "start_time": "2024-06-01T03:00:00Z",
+      "regularity": "monthly",
+      "status": "completed",
+      "message": 2,
+      "next_send_time": "2024-07-01T03:00:00Z",
+      "owner": 5,
+      "client": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "mailing.mailing",
+    "pk": 10,
+    "fields": {
+      "start_time": "2024-06-01T03:00:00Z",
+      "regularity": "monthly",
+      "status": "completed",
+      "message": 3,
+      "next_send_time": "2024-07-01T03:00:00Z",
+      "owner": 5,
+      "client": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "mailing.mailingattempts",
+    "pk": 4,
+    "fields": {
+      "last_attempt_time": "2024-06-01T03:00:00Z",
+      "status": "successful",
+      "server_response": "1",
+      "mailing": 5
+    }
+  },
+  {
+    "model": "mailing.mailingattempts",
+    "pk": 6,
+    "fields": {
+      "last_attempt_time": "2024-06-01T03:00:00Z",
+      "status": "successful",
+      "server_response": "1",
+      "mailing": 10
+    }
+  }
+]

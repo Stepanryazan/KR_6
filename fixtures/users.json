@@ -1,0 +1,64 @@
+[
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$3s6V5keAbDUmc8pmG0JI2a$tKxmagYB2U8RkHao0s0hlEW2OttM3uu1jyLrKmKbiuc=",
+      "last_login": "2024-06-10T01:33:39.222Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "SkyPro",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-08T16:17:40.552Z",
+      "email": "admin@sky.pro",
+      "name": "",
+      "surname": "",
+      "token": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$sYrx4C2nabtQfi9HEXUmZe$2ZkP8j+T/2KGorEQ22oiMvXnpMgm+lq7qZTIuYfT9/o=",
+      "last_login": "2024-06-10T01:36:04.264Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-08T16:35:21.164Z",
+      "email": "schmelyov.jegor@yandex.ru",
+      "name": "",
+      "surname": "",
+      "token": "f2638f45a7e45a58802bd5e0455406bd",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$ANUP7p13qDLceBEM9SlVsk$Vyh8xjNgeyXnU4z0LciTNiF3xsZke2NNeHhRNfJvE1g=",
+      "last_login": "2024-06-10T01:35:29.734Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-08T16:36:41Z",
+      "email": "manager@gmail.com",
+      "name": "manager",
+      "surname": "staff",
+      "token": null,
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  }
+]

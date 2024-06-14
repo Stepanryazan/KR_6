@@ -1,0 +1,23 @@
+<div class="col-sm-8 col-md-7 py-4">
+    <h4 class="text-white">О нас</h4>
+    <p class="text-muted">Сервис рассылок Mailings поможет вам при работе с клиентами. Здесь вы можете создавать
+        рассылки, которые наш сервис будет автоматически отправлять вашим клиентам в заданное время!</p>
+</div>
+<div class="col-sm-4 offset-md-1 py-4">
+    <h4 class="text-white">Меню</h4>
+    <ul class="list-unstyled">
+        <li><a href="{% url 'main:prohome' %}" class="text-white">Главная</a></li>
+
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'users:profile' %}" class="text-white">Профиль</a></li>
+        <li><a href="{% url 'mailing:home' %}" class="text-white">Мои рассылки</a></li>
+        <li><a href="{% url 'mailing:clients' %}" class="text-white">Мои клиенты</a></li>
+        <li><a href="{% url 'mailing:messages' %}" class="text-white">Мои сообщения</a></li>
+        <li><a href="{% url 'users:logout' %}" class="text-white">Выйти</a></li>
+        <li><a href="{% url 'users:view_all_users' %}" class="text-white">Все пользователи</a></li>
+        {% else %}
+        <li><a href="{% url 'users:login' %}" class="text-white">Войти</a></li>
+        <li><a href="{% url 'users:register' %}" class="text-white">Зарегистрироваться</a></li>
+        {% endif %}
+    </ul>
+</div>

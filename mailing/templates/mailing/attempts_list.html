@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Рассылка "{{ object.message }}"</h1>
+        <p class="lead text-muted">На этой странице отображена информация о рассылке "{{ object.message }}"!</p>
+    </div>
+</section>
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Попытки рассылки
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        {% for attempt in object.mailingattempts_set.all %}
+                        <li><a href="{% url 'mailing:view_attempt' attempt.pk %}">{{ attempt.get_status_display }}
+                            ({{attempt.last_attempt_time}})</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
